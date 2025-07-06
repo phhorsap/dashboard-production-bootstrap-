@@ -1,0 +1,168 @@
+
+        :root {
+            --primary-dark-purple: #6b21a8;
+            --primary-light-purple: #d8b4fe;
+            --accent-light-purple: #f3e8ff;
+            --background-light: #f9fafb;
+        }
+        
+        body {
+        background-color: var(--background-light);
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .navbar-custom {
+        background: linear-gradient(135deg, var(--primary-dark-purple), var(--primary-light-purple));
+        box-shadow: 0 2px 10px rgba(107, 33, 168, 0.3);
+    }
+
+    .navbar-brand {
+        font-weight: bold;
+        font-size: 1.5rem;
+    }
+
+    .nav-link {
+        color: white !important;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        border-radius: 8px;
+        margin: 0 5px;
+        padding: 8px 16px !important;
+    }
+
+    .nav-link:hover, .nav-link.active {
+        background-color: rgba(255, 255, 255, 0.2);
+        transform: translateY(-2px);
+    }
+
+    .filter-section {
+        background: white;
+        border-radius: 15px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        padding: 25px;
+        margin-bottom: 30px;
+    }
+
+    .kpi-card {
+        background: linear-gradient(135deg, white, #faf7ff);
+        border-radius: 15px;
+        padding: 25px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        border-left: 5px solid var(--primary-light-purple);
+        margin-bottom: 20px;
+    }
+
+    .kpi-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .kpi-value {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: var(--primary-dark-purple);
+        margin-bottom: 5px;
+    }
+
+    .kpi-label {
+        color: #64748b;
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .kpi-change {
+        font-size: 0.9rem;
+        font-weight: 600;
+    }
+
+    .kpi-change.positive {
+        color: #10b981;
+    }
+
+    .kpi-change.negative {
+        color: #ef4444;
+    }
+
+    .top-report-section {
+        background: white;
+        border-radius: 15px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        padding: 30px;
+    }
+
+    .section-title {
+        color: var(--primary-dark-purple);
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-bottom: 25px;
+        border-bottom: 3px solid var(--accent-light-purple);
+        padding-bottom: 10px;
+    }
+
+    .top-item {
+        background: linear-gradient(135deg, #faf7ff, white);
+        border-radius: 10px;
+        padding: 15px;
+        margin-bottom: 15px;
+        border-left: 4px solid var(--primary-light-purple);
+        transition: all 0.3s ease;
+    }
+
+    .top-item:hover {
+        transform: translateX(5px);
+        box-shadow: 0 4px 15px rgba(139, 92, 246, 0.2);
+    }
+
+    .rank-badge {
+        background: var(--primary-light-purple);
+        color: white;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        font-size: 0.9rem;
+    }
+
+    .btn-filter {
+        background: var(--primary-light-purple);
+        border: none;
+        border-radius: 10px;
+        padding: 10px 25px;
+        color: white;
+        font-weight: 600;
+        transition: all 0.3s ease;
+    }
+
+    .btn-filter:hover {
+        background: var(--primary-dark-purple);
+        transform: translateY(-2px);
+        color: white;
+    }
+
+    .form-select, .form-control {
+        border-radius: 10px;
+        border: 2px solid #e2e8f0;
+        transition: all 0.3s ease;
+    }
+
+    .form-select:focus, .form-control:focus {
+        border-color: var(--primary-light-purple);
+        box-shadow: 0 0 0 0.2rem rgba(139, 92, 246, 0.25);
+    }
+
+    .chart-placeholder {
+        background: linear-gradient(135deg, var(--accent-light-purple), #ede9fe);
+        border-radius: 10px;
+        height: 200px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--primary-dark-purple);
+        font-weight: 600;
+        margin-top: 20px;
+    }

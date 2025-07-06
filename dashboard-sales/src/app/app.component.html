@@ -1,0 +1,521 @@
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Bootstrap JS Bundle (includes Popper) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+<link rel="icon" href="https://example.com/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <div class="navbar-custom">
+   <h2 style="margin-left: 10px;">Sales Dashboard</h2> 
+  </div>
+<body>
+    <style>
+        :root {
+            --primary-dark-purple: #6b21a8;
+            --primary-light-purple: #d8b4fe;
+            --accent-light-purple: #f3e8ff;
+            --background-light: #f9fafb;
+        }
+        
+        body {
+        background-color: var(--background-light);
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .navbar-custom {
+        background: linear-gradient(135deg, rgb(105, 2, 105), rgb(252, 198, 252));
+        box-shadow: 0 2px 10px rgba(107, 33, 168, 0.3);
+        color: white;
+        height: 10vh;
+        border-radius: 10px;
+        position: inherit;
+        margin-left: 10px;
+        text-align: left;
+    }
+
+    .navbar-brand {
+        font-weight: bold;
+        font-size: 1.5rem;
+    }
+
+    .nav-link {
+        color: white !important;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        border-radius: 8px;
+        margin: 0 5px;
+        padding: 8px 16px !important;
+    }
+
+    .nav-link:hover, .nav-link.active {
+        background-color: rgba(255, 255, 255, 0.2);
+        transform: translateY(-2px);
+    }
+
+    .filter-section {
+        background: white;
+        border-radius: 15px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        padding: 25px;
+        margin-bottom: 30px;
+    }
+
+    .kpi-card {
+        background: linear-gradient(135deg, violet, white);
+        border-radius: 15px;
+        padding: 25px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        border-left: 5px solid var(--primary-light-purple);
+        margin-bottom: 20px;
+    }
+
+    .kpi-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .kpi-value {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: var(--primary-dark-purple);
+        margin-bottom: 5px;
+    }
+
+    .kpi-label {
+        color: #64748b;
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .kpi-change {
+        font-size: 0.9rem;
+        font-weight: 600;
+    }
+
+    .kpi-change.positive {
+        color: #10b981;
+    }
+
+    .kpi-change.negative {
+        color: #ef4444;
+    }
+
+    .top-report-section {
+        background: white;
+        border-radius: 15px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        padding: 30px;
+    }
+
+    .section-title {
+        color: var(--primary-dark-purple);
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-bottom: 25px;
+        border-bottom: 3px solid var(--accent-light-purple);
+        padding-bottom: 10px;
+    }
+
+    .top-item {
+        background: linear-gradient(135deg, #faf7ff, white);
+        border-radius: 10px;
+        padding: 15px;
+        margin-bottom: 15px;
+        border-left: 4px solid var(--primary-light-purple);
+        transition: all 0.3s ease;
+    }
+
+    .top-item:hover {
+        transform: translateX(5px);
+        box-shadow: 0 4px 15px rgba(139, 92, 246, 0.2);
+    }
+
+    .rank-badge {
+        background: var(--primary-light-purple);
+        color: white;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        font-size: 0.9rem;
+    }
+
+    .btn-filter {
+        background: var(--primary-light-purple);
+        border: none;
+        border-radius: 10px;
+        padding: 10px 25px;
+        color: white;
+        font-weight: 600;
+        transition: all 0.3s ease;
+    }
+
+    .btn-filter:hover {
+        background: var(--primary-dark-purple);
+        transform: translateY(-2px);
+        color: white;
+    }
+
+    .form-select, .form-control {
+        border-radius: 10px;
+        border: 2px solid #e2e8f0;
+        transition: all 0.3s ease;
+    }
+
+    .form-select:focus, .form-control:focus {
+        border-color: var(--primary-light-purple);
+        box-shadow: 0 0 0 0.2rem rgba(139, 92, 246, 0.25);
+    }
+
+    .chart-placeholder {
+        background: linear-gradient(135deg, var(--accent-light-purple), #ede9fe);
+        border-radius: 10px;
+        height: 200px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--primary-dark-purple);
+        font-weight: 600;
+        margin-top: 20px;
+    }
+</style>
+<div class="container-fluid mt-4">
+    <!-- Filter Section -->
+    <div class="filter-section">
+        <h4 class="section-title">
+            <i class="fas fa-filter me-2"></i>Filter & Zeitraum
+        </h4>
+        <div class="row">
+            <div class="col-md-3">
+                <label class="form-label fw-bold">Jahr</label>
+                <select class="form-select" id="yearFilter" onchange="updateData()">
+                    <option value="2024">2024</option>
+                    <option value="2023">2023</option>
+                    <option value="2022">2022</option>
+                </select>
+            </div>
+            <div class="col-md-3">
+                <label class="form-label fw-bold">Monat</label>
+                <select class="form-select" id="monthFilter" onchange="updateData()">
+                    <option value="">Alle Monate</option>
+                    <option value="1">Januar</option>
+                    <option value="2">Februar</option>
+                    <option value="3">März</option>
+                    <option value="4">April</option>
+                    <option value="5">Mai</option>
+                    <option value="6">Juni</option>
+                    <option value="7">Juli</option>
+                    <option value="8">August</option>
+                    <option value="9">September</option>
+                    <option value="10">Oktober</option>
+                    <option value="11">November</option>
+                    <option value="12">Dezember</option>
+                </select>
+            </div>
+            <div class="col-md-3">
+                <label class="form-label fw-bold">Tag</label>
+                <input type="date" class="form-control" id="dayFilter" onchange="updateData()">
+            </div>
+            <div class="col-md-3 d-flex align-items-end">
+                <button class="btn btn-filter w-100" onclick="resetFilters()">
+                    <i class="fas fa-refresh me-2"></i>Filter zurücksetzen
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- KPI Section -->
+    <div class="row">
+        <div class="col-md-3">
+            <div class="kpi-card">
+                <div class="d-flex justify-content-between align-items-start">
+                    <div>
+                        <div class="kpi-value" id="totalSales">€2.4M</div>
+                        <div class="kpi-label">Gesamtumsatz</div>
+                        <div class="kpi-change positive">
+                            <i class="fas fa-arrow-up me-1"></i>+12.5%
+                        </div>
+                    </div>
+                    <div class="text-primary fs-2">
+                        <i class="fas fa-euro-sign"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="kpi-card">
+                <div class="d-flex justify-content-between align-items-start">
+                    <div>
+                        <div class="kpi-value" id="ytdSales">€18.7M</div>
+                        <div class="kpi-label">YTD Umsatz</div>
+                        <div class="kpi-change positive">
+                            <i class="fas fa-arrow-up me-1"></i>+8.3%
+                        </div>
+                    </div>
+                    <div class="text-primary fs-2">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="kpi-card">
+                <div class="d-flex justify-content-between align-items-start">
+                    <div>
+                        <div class="kpi-value" id="totalOrders">1,247</div>
+                        <div class="kpi-label">Bestellungen</div>
+                        <div class="kpi-change positive">
+                            <i class="fas fa-arrow-up me-1"></i>+15.2%
+                        </div>
+                    </div>
+                    <div class="text-primary fs-2">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="kpi-card">
+                <div class="d-flex justify-content-between align-items-start">
+                    <div>
+                        <div class="kpi-value" id="avgOrderValue">€1,925</div>
+                        <div class="kpi-label">Ø Bestellwert</div>
+                        <div class="kpi-change negative">
+                            <i class="fas fa-arrow-down me-1"></i>-2.1%
+                        </div>
+                    </div>
+                    <div class="text-primary fs-2">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Top 10 Reports Section -->
+    <div class="row">
+        <div class="col-md-6">
+            <div class="top-report-section">
+                <h4 class="section-title">
+                    <i class="fas fa-trophy me-2"></i>Top 10 Produkte
+                </h4>
+                <div id="topProducts">
+                    <div class="top-item">
+                        <div class="d-flex align-items-center">
+                            <div class="rank-badge me-3">1</div>
+                            <div class="flex-grow-1">
+                                <div class="fw-bold">Premium Software Lizenz</div>
+                                <div class="text-muted small">€485,200 Umsatz</div>
+                            </div>
+                            <div class="text-success fw-bold">+18%</div>
+                        </div>
+                    </div>
+                    <div class="top-item">
+                        <div class="d-flex align-items-center">
+                            <div class="rank-badge me-3">2</div>
+                            <div class="flex-grow-1">
+                                <div class="fw-bold">Enterprise Support</div>
+                                <div class="text-muted small">€342,150 Umsatz</div>
+                            </div>
+                            <div class="text-success fw-bold">+12%</div>
+                        </div>
+                    </div>
+                    <div class="top-item">
+                        <div class="d-flex align-items-center">
+                            <div class="rank-badge me-3">3</div>
+                            <div class="flex-grow-1">
+                                <div class="fw-bold">Cloud Storage Pro</div>
+                                <div class="text-muted small">€298,750 Umsatz</div>
+                            </div>
+                            <div class="text-success fw-bold">+25%</div>
+                        </div>
+                    </div>
+                    <div class="top-item">
+                        <div class="d-flex align-items-center">
+                            <div class="rank-badge me-3">4</div>
+                            <div class="flex-grow-1">
+                                <div class="fw-bold">Analytics Dashboard</div>
+                                <div class="text-muted small">€187,300 Umsatz</div>
+                            </div>
+                            <div class="text-danger fw-bold">-5%</div>
+                        </div>
+                    </div>
+                    <div class="top-item">
+                        <div class="d-flex align-items-center">
+                            <div class="rank-badge me-3">5</div>
+                            <div class="flex-grow-1">
+                                <div class="fw-bold">Security Suite</div>
+                                <div class="text-muted small">€156,890 Umsatz</div>
+                            </div>
+                            <div class="text-success fw-bold">+8%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="top-report-section">
+                <h4 class="section-title">
+                    <i class="fas fa-users me-2"></i>Top 10 Kunden
+                </h4>
+                <div id="topCustomers">
+                    <div class="top-item">
+                        <div class="d-flex align-items-center">
+                            <div class="rank-badge me-3">1</div>
+                            <div class="flex-grow-1">
+                                <div class="fw-bold">TechCorp GmbH</div>
+                                <div class="text-muted small">€125,400 Umsatz</div>
+                            </div>
+                            <div class="text-success fw-bold">+22%</div>
+                        </div>
+                    </div>
+                    <div class="top-item">
+                        <div class="d-flex align-items-center">
+                            <div class="rank-badge me-3">2</div>
+                            <div class="flex-grow-1">
+                                <div class="fw-bold">Innovation AG</div>
+                                <div class="text-muted small">€98,750 Umsatz</div>
+                            </div>
+                            <div class="text-success fw-bold">+15%</div>
+                        </div>
+                    </div>
+                    <div class="top-item">
+                        <div class="d-flex align-items-center">
+                            <div class="rank-badge me-3">3</div>
+                            <div class="flex-grow-1">
+                                <div class="fw-bold">Digital Solutions Ltd</div>
+                                <div class="text-muted small">€87,200 Umsatz</div>
+                            </div>
+                            <div class="text-success fw-bold">+31%</div>
+                        </div>
+                    </div>
+                    <div class="top-item">
+                        <div class="d-flex align-items-center">
+                            <div class="rank-badge me-3">4</div>
+                            <div class="flex-grow-1">
+                                <div class="fw-bold">Future Systems</div>
+                                <div class="text-muted small">€76,850 Umsatz</div>
+                            </div>
+                            <div class="text-danger fw-bold">-3%</div>
+                        </div>
+                    </div>
+                    <div class="top-item">
+                        <div class="d-flex align-items-center">
+                            <div class="rank-badge me-3">5</div>
+                            <div class="flex-grow-1">
+                                <div class="fw-bold">Smart Business Inc</div>
+                                <div class="text-muted small">€65,300 Umsatz</div>
+                            </div>
+                            <div class="text-success fw-bold">+19%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chart Section -->
+    <div class="row mt-4">
+        <div class="col-12">
+            <div class="top-report-section">
+                <h4 class="section-title">
+                    <i class="fas fa-chart-area me-2"></i>Umsatzentwicklung
+                </h4>
+                <div class="chart-placeholder">
+                    <div class="text-center">
+                        <i class="fas fa-chart-line fs-1 mb-3"></i>
+                        <div>Interaktives Diagramm wird hier angezeigt</div>
+                        <div class="small text-muted mt-2">Chart.js oder ähnliche Bibliothek kann hier integriert werden</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    // Sample data for demonstration
+    const sampleData = {
+        totalSales: ['€2.4M', '€2.1M', '€2.8M'],
+        ytdSales: ['€18.7M', '€16.2M', '€21.3M'],
+        totalOrders: ['1,247', '1,089', '1,456'],
+        avgOrderValue: ['€1,925', '€1,930', '€1,918']
+    };
+
+    function setActiveTab(element) {
+        // Remove active class from all nav links
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.classList.remove('active');
+        });
+        // Add active class to clicked element
+        element.classList.add('active');
+    }
+
+    function updateData() {
+        const year = document.getElementById('yearFilter').value;
+        const month = document.getElementById('monthFilter').value;
+        const day = document.getElementById('dayFilter').value;
+        
+        // Simulate data update based on filters
+        const randomIndex = Math.floor(Math.random() * 3);
+        
+        document.getElementById('totalSales').textContent = sampleData.totalSales[randomIndex];
+        document.getElementById('ytdSales').textContent = sampleData.ytdSales[randomIndex];
+        document.getElementById('totalOrders').textContent = sampleData.totalOrders[randomIndex];
+        document.getElementById('avgOrderValue').textContent = sampleData.avgOrderValue[randomIndex];
+        
+        // Show loading effect
+        const kpiCards = document.querySelectorAll('.kpi-card');
+        kpiCards.forEach(card => {
+            card.style.opacity = '0.7';
+            setTimeout(() => {
+                card.style.opacity = '1';
+            }, 300);
+        });
+        
+        console.log(`Filter angewendet: Jahr=${year}, Monat=${month}, Tag=${day}`);
+    }
+
+    function resetFilters() {
+        document.getElementById('yearFilter').value = '2024';
+        document.getElementById('monthFilter').value = '';
+        document.getElementById('dayFilter').value = '';
+        
+        // Reset to default values
+        document.getElementById('totalSales').textContent = '€2.4M';
+        document.getElementById('ytdSales').textContent = '€18.7M';
+        document.getElementById('totalOrders').textContent = '1,247';
+        document.getElementById('avgOrderValue').textContent = '€1,925';
+        
+        console.log('Filter zurückgesetzt');
+    }
+
+    // Initialize dashboard
+    document.addEventListener('DOMContentLoaded', function() {
+        console.log('Sales Dashboard geladen');
+        
+        // Add hover effects to KPI cards
+        document.querySelectorAll('.kpi-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.borderLeftWidth = '8px';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.borderLeftWidth = '5px';
+            });
+        });
+    });
+</script>
+</body>
